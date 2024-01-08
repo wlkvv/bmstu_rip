@@ -12,6 +12,7 @@ import (
 const (
 	expectedToken = "SomeToken123456"
 	updateURL     = "http://176.57.215.76:8000/api/orders/update_deadline/"
+	token         = "SomeToken123456"
 )
 
 type TimeResult struct {
@@ -54,6 +55,7 @@ func handleProcess(w http.ResponseWriter, r *http.Request) {
 		expResult := TimeResult{
 			OrderID:   orderid,
 			Fact_time: result,
+			Token:     token,
 		}
 		fmt.Println("json", expResult)
 		jsonValue, err := json.Marshal(expResult)
