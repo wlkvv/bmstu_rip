@@ -37,12 +37,12 @@ func handleProcess(w http.ResponseWriter, r *http.Request) {
 	token := r.FormValue("token")
 	fmt.Println(orderid, token)
 
-	if token == "" || token != expectedToken {
-		http.Error(w, "Токен не сответствует ожидаемому", http.StatusForbidden)
-		fmt.Println("Токен не сответствует ожидаемому")
-		fmt.Println(token, expectedToken)
-		return
-	}
+	// if token == "" || token != expectedToken {
+	// 	http.Error(w, "Токен не сответствует ожидаемому", http.StatusForbidden)
+	// 	fmt.Println("Токен не сответствует ожидаемому")
+	// 	fmt.Println(token, expectedToken)
+	// 	return
+	// }
 
 	w.WriteHeader(http.StatusOK)
 
